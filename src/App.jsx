@@ -5,6 +5,7 @@ import { SelectContent } from "./components/Select/SelectContent";
 import { SelectItem } from "./components/Select/SelectItem";
 import { SelectTrigger } from "./components/Select/SelectTrigger";
 import { SelectValue } from "./components/Select/SelectValue";
+import { SelectLabel } from "./components/Select/SelectLabel";
 
 const DATA = [
   {
@@ -28,25 +29,27 @@ const DATA = [
 const USERS_DATA = [
   {
     id: 1,
-    name: "Anish",
+    username: "Anish",
   },
   {
     id: 2,
-    name: "Manish",
+    username: "Manish",
   },
   {
     id: 3,
-    name: "Danish",
+    username: "Danish",
   },
   {
     id: 4,
-    name: "Ashish",
+    username: "Ashish",
   },
 ];
 
 function App() {
   const [selected, setSelected] = useState(null);
   const [ selectedUser, setSelectedUser ] = useState(null);
+  const [ searchUser, setSearchUser ] = useState("");
+  const [ searchFruit, setSearchFruit ] = useState("");
 
   const isItemSelected = (item) => {
     if (selected) {
@@ -88,6 +91,14 @@ function App() {
     }
   }
 
+  const handleSearchFruit = (searchInput) => {
+    setSearchFruit(searchInput);
+  }
+
+  const handleSearchUser = (searchInput) => {
+    setSearchUser(searchInput);
+  }
+
   return (
     <>
       <h1 className="">Component Library</h1>
@@ -101,6 +112,7 @@ function App() {
             <SelectValue placeholder={"Select a fruit"} accessKey={"name"} />
           </SelectTrigger>
           <SelectContent>
+            <SelectLabel handleSearch={handleSearchFruit}>Fruits</SelectLabel>
             {DATA.map((item) => {
               return (
                 <SelectItem key={item.id} value={item}>
@@ -118,13 +130,14 @@ function App() {
           isItemSelected={isUserSelected}
         >
           <SelectTrigger>
-            <SelectValue placeholder={"Select a user"} accessKey={"name"} />
+            <SelectValue placeholder={"Select a user"} accessKey={"username"} />
           </SelectTrigger>
           <SelectContent>
+            <SelectLabel handleSearch={handleSearchUser}>Users</SelectLabel>
             {USERS_DATA.map((item) => {
               return (
                 <SelectItem key={item.id} value={item}>
-                  {item.name}
+                  {item.username}
                 </SelectItem>
               );
             })}
