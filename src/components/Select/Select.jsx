@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 
 export const SelectContext = createContext(null);
 
@@ -9,6 +9,11 @@ export const Select = ({
   children,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const refs = {
+    triggerRef: useRef(null),
+    contentRef: useRef(null),
+  }
 
   const toggleDropdown = () => {
     setIsOpen((prevState) => !prevState);
@@ -22,9 +27,10 @@ export const Select = ({
         toggleDropdown,
         selectItem,
         isItemSelected,
+        refs,
       }}
     >
-      <div className="w-[180px]">{children}</div>
+      <div className="w-[180px]" aria-labelledby="select-trigger">{children}</div>
     </SelectContext.Provider>
   );
 };
