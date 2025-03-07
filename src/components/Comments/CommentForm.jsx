@@ -7,8 +7,12 @@ const CommentForm = () => {
   const { addNewComment } = useContext(CommentsContext);
 
   return (
-    <div>
-      <textarea onChange={(e) => setCommentInput(e.target.value)} />
+    <div className="w-[500px] flex flex-col gap-2 bg-[#F2F2F2] rounded-md p-2.5">
+      <textarea
+        placeholder="What are your thoughts?"
+        onChange={(e) => setCommentInput(e.target.value)}
+        className="h-[200px] w-full resize-none outline-none p-2"
+      />
       <button
         disabled={commentInput === ""}
         className="h-10 px-3 rounded-4xl text-white disabled:bg-[#DCDCDC] bg-black transition-colors"
