@@ -12,6 +12,7 @@ const CommentForm = () => {
         placeholder="What are your thoughts?"
         onChange={(e) => setCommentInput(e.target.value)}
         className="h-[200px] w-full resize-none outline-none p-2"
+        value={commentInput}
       />
       <button
         disabled={commentInput === ""}
@@ -19,6 +20,7 @@ const CommentForm = () => {
         onClick={() => {
           if (commentInput) {
             addNewComment(commentInput);
+            setCommentInput("");
           }
         }}
       >

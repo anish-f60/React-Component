@@ -6,6 +6,7 @@ import { SelectItem } from "./components/Select/SelectItem";
 import { SelectTrigger } from "./components/Select/SelectTrigger";
 import { SelectValue } from "./components/Select/SelectValue";
 import { SelectLabel } from "./components/Select/SelectLabel";
+import Comments from "./components/Comments/Comments";
 
 const DATA = [
   {
@@ -47,9 +48,9 @@ const USERS_DATA = [
 
 function App() {
   const [selected, setSelected] = useState(null);
-  const [ selectedUser, setSelectedUser ] = useState(null);
-  const [ searchUser, setSearchUser ] = useState("");
-  const [ searchFruit, setSearchFruit ] = useState("");
+  const [selectedUser, setSelectedUser] = useState(null);
+  const [searchUser, setSearchUser] = useState("");
+  const [searchFruit, setSearchFruit] = useState("");
 
   const isItemSelected = (item) => {
     if (selected) {
@@ -72,16 +73,16 @@ function App() {
   };
 
   const isUserSelected = (user) => {
-    if(selectedUser) {
+    if (selectedUser) {
       return user.id === selectedUser.id;
     }
 
-    return false
-  }
+    return false;
+  };
 
   const selectUser = (user) => {
-    if(selectedUser) {
-      if(selectedUser.id === user.id) {
+    if (selectedUser) {
+      if (selectedUser.id === user.id) {
         setSelectedUser(null);
       } else {
         setSelectedUser(user);
@@ -89,19 +90,19 @@ function App() {
     } else {
       setSelectedUser(user);
     }
-  }
+  };
 
   const handleSearchFruit = (searchInput) => {
     setSearchFruit(searchInput);
-  }
+  };
 
   const handleSearchUser = (searchInput) => {
     setSearchUser(searchInput);
-  }
+  };
 
   return (
     <>
-      <h1 className="">Component Library</h1>
+      {/* <h1 className="">Component Library</h1>
       <div className="flex justify-center my-5">
         <Select
           selectItem={selectItem}
@@ -143,7 +144,8 @@ function App() {
             })}
           </SelectContent>
         </Select>
-      </div>
+      </div> */}
+      <Comments />
     </>
   );
 }
