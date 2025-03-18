@@ -7,6 +7,10 @@ import { SelectTrigger } from "./components/Select/SelectTrigger";
 import { SelectValue } from "./components/Select/SelectValue";
 import { SelectLabel } from "./components/Select/SelectLabel";
 import Comments from "./components/Comments/Comments";
+import DropdownMenu from "./components/DropdownMenu/DropdownMenu";
+import DropdownMenuTrigger from "./components/DropdownMenu/DropdownMenuTrigger";
+import DropdownMenuContent from "./components/DropdownMenu/DropdownMenuContent";
+import DropdownMenuItem from "./components/DropdownMenu/DropdownMenuItem";
 
 const DATA = [
   {
@@ -145,7 +149,15 @@ function App() {
           </SelectContent>
         </Select>
       </div> */}
-      <Comments />
+      {/* <Comments /> */}
+      <div className="flex justify-center items-center h-screen w-full">
+        <DropdownMenu>
+          <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuItem>Logout</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
     </>
   );
 }

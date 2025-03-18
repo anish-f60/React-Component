@@ -5,10 +5,13 @@ export const DropdownMenuCtx = createContext();
 const DropdownMenu = ({ children }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const toggleDropdwown = () => setIsDropdownOpen((prevState) => !prevState);
+  const toggleDropdown = () => {
+    console.log("helo");
+    setIsDropdownOpen((prevState) => !prevState);
+  };
 
   return (
-    <DropdownMenuCtx.Provider value={{ isDropdownOpen, toggleDropdwown }}>
+    <DropdownMenuCtx.Provider value={{ isDropdownOpen, toggleDropdown }}>
       {children}
     </DropdownMenuCtx.Provider>
   );
