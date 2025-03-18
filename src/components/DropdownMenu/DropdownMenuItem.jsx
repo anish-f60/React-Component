@@ -12,7 +12,7 @@ const DropdownMenuItem = ({ className = "", children, ...props }) => {
           props.onClick();
         }
       }}
-      className={`h-8 min-w-32 flex items-center justify-between rounded-sm hover:bg-gray-300/30 mx-1 px-2 bg-green-300 ${className}`}
+      className={`h-8 min-w-32 flex items-center justify-between rounded-sm hover:bg-gray-300/30 mx-1 px-2 ${className}`}
       {...props}
     >
       {children}
