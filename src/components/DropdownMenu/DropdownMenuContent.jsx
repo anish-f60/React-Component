@@ -13,7 +13,7 @@ const DropdownMenuContent = ({ className = "", children }) => {
     <div
       ref={refs.contentRef}
       style={{ ...contentStyle }}
-      className={`flex flex-col py-2 rounded-md bg-white border shadow-2xl fixed top-0 left-0 ${className}`}
+      className={`flex flex-col py-2 rounded-md bg-white border shadow-2xl fixed top-0 left-0 pointer-events-auto ${className}`}
     >
       {children}
     </div>,
