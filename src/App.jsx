@@ -11,6 +11,7 @@ import DropdownMenu from "./components/DropdownMenu/DropdownMenu";
 import DropdownMenuTrigger from "./components/DropdownMenu/DropdownMenuTrigger";
 import DropdownMenuContent from "./components/DropdownMenu/DropdownMenuContent";
 import DropdownMenuItem from "./components/DropdownMenu/DropdownMenuItem";
+import PasswordStrength from "./components/PasswordStrength/PasswordStrength";
 
 const DATA = [
   {
@@ -150,7 +151,7 @@ function App() {
         </Select>
       </div> */}
       {/* <Comments /> */}
-      <div className="flex  gap-4 justify-between items-center h-screen w-full">
+      {/* <div className="flex  gap-4 justify-between items-center h-screen w-full">
         <DropdownMenu>
           <DropdownMenuTrigger>Open</DropdownMenuTrigger>
           <DropdownMenuContent>
@@ -338,7 +339,8 @@ function App() {
             <DropdownMenuItem>Logout</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-      </div>
+      </div> */}
+      <PasswordStrength />
     </>
   );
 }
