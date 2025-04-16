@@ -12,6 +12,9 @@ import DropdownMenuTrigger from "./components/DropdownMenu/DropdownMenuTrigger";
 import DropdownMenuContent from "./components/DropdownMenu/DropdownMenuContent";
 import DropdownMenuItem from "./components/DropdownMenu/DropdownMenuItem";
 import PasswordStrength from "./components/PasswordStrength/PasswordStrength";
+import Tooltip from "./components/Tooltip/Tooltip";
+import TooltipTrigger from "./components/Tooltip/TooltipTrigger";
+import TooltipContent from "./components/Tooltip/TooltipContent";
 
 const DATA = [
   {
@@ -340,7 +343,15 @@ function App() {
           </DropdownMenuContent>
         </DropdownMenu>
       </div> */}
-      <PasswordStrength />
+      {/* <PasswordStrength /> */}
+      <div className="flex justify-center items-center my-5">
+        <Tooltip>
+          <TooltipTrigger>Hover over me</TooltipTrigger>
+          <TooltipContent>
+            Hello there dash jsah jskah jksah jksa jsjka!
+          </TooltipContent>
+        </Tooltip>
+      </div>
     </>
   );
 }
